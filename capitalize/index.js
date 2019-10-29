@@ -7,6 +7,15 @@
 //   capitalize('a lazy fox') --> 'A Lazy Fox'
 //   capitalize('look, it is working!') --> 'Look, It Is Working!'
 
-function capitalize(str) {}
+function capitalize(str) {
+    // Make an array from the string where there is a space
+    let arr = str.split(' ');
+    // loop through the array
+    for(let i = 0; i < arr.length; i++){
+        arr[i] = arr[i][0].toUpperCase() + arr[i+1];
+    }
+    console.log(arr);
 
+}
+capitalize('a lazy fox')
 module.exports = capitalize;
