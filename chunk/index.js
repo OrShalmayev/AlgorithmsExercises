@@ -18,21 +18,30 @@ function chunk(array, size) {
 
     /** SOLUTION 2 **/
     // Create empty array to hold chunks
+    // const chunked = [];
+    // // for each element in the unchunked array
+    // for(let element of array){
+    //     // retrieve the last element in chunked
+    //     const last = chunked[chunked.length -1];
+    //     // if last element does not exists or if its length is equal to chunk size
+    //     if(!last || last.length === size){
+    //         // push new chunk into chunked with current element
+    //         chunked.push([element]);
+    //     }else{
+    //         // add the curreent element into the chunked
+    //         last.push(element);
+    //     }
+    // }
+    // return chunked;
+
+    /** SOLUTION 3 **/
     const chunked = [];
-    // for each element in the unchunked array
-    for(let element of array){
-        // retrieve the last element in chunked
-        const last = chunked[chunked.length -1];
-        // if last element does not exists or if its length is equal to chunk size
-        if(!last || last.length === size){
-            // push new chunk into chunked with current element
-            chunked.push([element]);
-        }else{
-            // add the curreent element into the chunked
-            last.push(element);
-        }
+    let index = 0;
+
+    while(index < array.length){
+        chunked.push(array.slice(index, index+size));
+        index += size;
     }
-    
     return chunked;
 
 }
